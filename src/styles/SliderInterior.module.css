@@ -1,0 +1,67 @@
+.slider {
+  position: relative;
+  /* height: 100%; */
+}
+
+.slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  opacity: 0;
+  width: 40rem;
+  transition: opacity 1s ease-in-out;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  /* user-drag: none; */
+}
+
+.slider img.active {
+  opacity: 1;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  /* user-drag: none; */
+}
+
+.image {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  /* user-drag: none; */
+}
+
+@media only screen and (max-width: 768px) {
+  /* .slider img.active {
+    width: 200px;
+  } */
+}
+
+@media screen and (max-width: 992px) {
+  .slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    /* user-drag: none; */
+  }
+
+  .slider img.active {
+    opacity: 1;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    /* user-drag: none; */
+  }
+}
