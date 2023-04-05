@@ -2,10 +2,9 @@ import React from "react";
 import Logo from "@/assets/images/sobat-kost-min.png";
 import Image from "next/image";
 
-export default function Footer() {
-  // const router = useRouter();
+export default function Footer({ contact }) {
   return (
-    <footer id="Kontak" className="bg-blue-200 ">
+    <footer id="Kontak" className="bg-blue-200" ref={contact}>
       <section className="flex flex-col items-center text-center md:items-start md:text-start md:flex-row lg:px-20 py-10 gap-10 md:gap-0">
         <section className="md:w-3/12 lg:w-4/12 mr-52">
           <div className="flex lg:justify-center lg:w-52 lg:items-center">

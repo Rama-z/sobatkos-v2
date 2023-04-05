@@ -7,7 +7,7 @@ import Architect from "@/assets/images/managemen-min.jpg";
 import Interior from "@/assets/images/foto-kos-2-min.jpg";
 import Mamikos from "@/assets/images/mamikos-min.jpg";
 import Ihub from "@/assets/images/logo-ihub-min.png";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import Slider from "@/components/Slider";
 import SliderInterior from "@/components/SliderInterior";
@@ -22,6 +22,10 @@ export default function Home() {
   const [quote, setQuote] = useState(1);
   const [shown1, setShown1] = useState(false);
   const [shown2, setShown2] = useState(false);
+  const mitra = useRef(null);
+  const about = useRef(null);
+  const contact = useRef(null);
+
   return (
     <>
       <Head>
@@ -30,7 +34,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
-      <Header />
+      <Header mitra={mitra} about={about} contact={contact} />
       <main className="pt-20 bg-white">
         <div
           className="w-30"
@@ -69,7 +73,8 @@ export default function Home() {
         </section>
         <section
           id="Tentang Kami"
-          className="lg:p-20 flex flex-col gap-20 pt-10"
+          className="lg:px-20 flex flex-col gap-20 pt-10"
+          ref={about}
         >
           <article className="text-center text-4xl lg:px-20 font-bold">
             Sobat Kos memiliki 2 jasa utama yaitu :
@@ -136,7 +141,7 @@ export default function Home() {
             </div>
           </article>
         </section>
-        <section className="min-h-screen">
+        <section className="min-h-screen" ref={mitra}>
           <section className="flex justify-center text-3xl font-bold">
             Mitra Sobat Kos
           </section>
@@ -150,7 +155,7 @@ export default function Home() {
           </section>
         </section>
       </main>
-      <Footer />
+      <Footer contact={contact} />
     </>
   );
 }

@@ -3,9 +3,16 @@ import React, { useState } from "react";
 import Logo from "@/assets/images/sobat-kost-min.png";
 import { useRouter } from "next/router";
 
-export default function Header() {
+export default function Header({ about, mitra, contact }) {
   const [dropdown, setDropdown] = useState(false);
   const router = useRouter();
+  const smoothScroll = (reference) => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: reference.current.offsetTop - 60,
+      left: 0,
+    });
+  };
   return (
     <header className="flex flex-row lg:items-center justify-between w-screen z-10 bg-white px-10 py-5 fixed">
       <div>
@@ -25,7 +32,7 @@ export default function Header() {
         <div
           className="cursor-pointer"
           onClick={() => {
-            router.push(`#Tentang Kami`);
+            smoothScroll(about);
             setDropdown(false);
           }}
         >
@@ -34,7 +41,7 @@ export default function Header() {
         <div
           className="cursor-pointer"
           onClick={() => {
-            router.push(`#Mitra`);
+            smoothScroll(mitra);
             setDropdown(false);
           }}
         >
@@ -43,7 +50,7 @@ export default function Header() {
         <div
           className="cursor-pointer"
           onClick={() => {
-            router.push(`#Kontak`);
+            smoothScroll(contact);
             setDropdown(false);
           }}
         >
